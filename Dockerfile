@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -y \
     libhdf5-dev \
     && rm -rf /var/lib/apt/lists/*
 
+    # Installer PyTorch avec CUDA
+RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
 # Installer les packages Python
 RUN pip install --no-cache-dir \
     numpy \
